@@ -5,23 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MoodAnalyserProblem
+{ 
+  public class MoodAnalyzer
 {
-    public class MoodAnalyser
+    public string message;  //instance variable
+
+
+    public MoodAnalyzer() //Constructors
     {
 
-        //instance variable
-        string message;
-
-        //parameterized constructor for initializing instance member
-        public MoodAnalyser(string message)
+    }
+    public MoodAnalyzer(string message) //parameterized constructor for intilizing instance member
+    {
+        this.message = message;
+        //this.methodName = methodName;
+    }
+    public string Analyzer()  //Analyzer method find mood
+    {
+        try  // Handling Exception
         {
-            this.message = message;
-        }
+            if (this.message.Equals(string.Empty))
+            {
 
-        //Analyser method to find mood
-        public string Analyser() //check msg passing into the constructor 
-        {
-            try
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.EMPTY_EXCEPTION, "Mood should not be empty");
+            }
+            else
             {
                 if (this.message.ToLower().Contains("happy"))
                 {
@@ -29,13 +37,16 @@ namespace MoodAnalyserProblem
                 }
                 else
                 {
-                    return "no mood";
+                    return "sad";
                 }
             }
-            catch (NullReferenceException ex)
-            {
-                return ex.Message;
-            }
+        }
+        catch (NullReferenceException ex)
+        {
+            //UC2 use -->// return ex.Message;
+            // return "happy";
+            throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NULL_EXCEPTION, "Mood should not be null");
         }
     }
+}
 }
