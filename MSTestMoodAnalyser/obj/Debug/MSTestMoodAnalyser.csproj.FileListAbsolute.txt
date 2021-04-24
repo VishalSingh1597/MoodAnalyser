@@ -1,0 +1,2 @@
+E:\MoodAnalyserProblem\MSTestMoodAnalyser\obj\Debug\MSTestMoodAnalyser.csprojAssemblyReference.cache
+E:\MoodAnalyserProblem\MSTestMoodAnalyser\obj\Debug\MSTestMoodAnalyser.csproj.CoreCompileInputs.cache
