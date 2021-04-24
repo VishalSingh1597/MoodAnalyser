@@ -3,19 +3,22 @@ using System;
 using MoodAnalyserProblem;
 
 
+
 namespace MSTestMoodAnalyser
 {
     [TestClass]
     public class UnitTest1
-    {
+    {/// <summary>
+     /// UC2 Handle Exception
+     /// </summary>
         [TestMethod]
-        public void Given_Happymood_Expecting_Happy_Results()
+        public void Given_nullmood_Expecting_Exception_Results()
         {
-            //    //Arrange;
-            MoodAnalyser mood = new MoodAnalyser("I am in happy mood");
-            string expected = "happy";
+            //Arrange;
+            MoodAnalyser mood = new MoodAnalyser(null);
+            string expected = "object reference not set to an instance of an object.";
 
-            //    //Act
+            //Act
             string actual = mood.Analyser();
 
             //Asert
