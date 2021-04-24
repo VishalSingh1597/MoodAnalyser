@@ -19,13 +19,20 @@ namespace MoodAnalyserProblem
         }
 
         //Analyser method to find mood
-        public string Analyser() //check msg passing into the constructor is contain(sad) then written sad else sad
+        public string Analyser() //check msg passing into the constructor 
         {
-            if (this.message.ToLower().Contains("sad"))
+            try
             {
-                return "sad";
+                if (this.message.ToLower().Contains("happy"))
+                {
+                    return "happy";
+                }
+                else
+                {
+                    return "no mood";
+                }
             }
-            else
+            catch
             {
                 return "happy";
             }
