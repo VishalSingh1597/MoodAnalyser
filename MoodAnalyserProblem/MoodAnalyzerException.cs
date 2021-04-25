@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyserProblem
+namespace MoodAnalyzerProblem
 {
     public class MoodAnalyzerException : Exception
     {

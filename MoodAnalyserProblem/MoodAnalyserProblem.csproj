@@ -44,12 +44,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MoodAnalyser.cs" />
+    <Compile Include="MoodAnalyserFactory.cs" />
     <Compile Include="MoodAnalyzerException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MSTestMoodAnalyser\MSTestMoodAnalyser.csproj">
+      <Project>{131100ee-2e3a-4c4b-b0fd-9d93ea0ac4b8}</Project>
+      <Name>MSTestMoodAnalyser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
