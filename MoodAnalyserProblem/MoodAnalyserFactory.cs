@@ -117,7 +117,32 @@ namespace MoodAnalyzerProblem
             }
         }
 
+        public static string SetField(string message, string fieldName)
+        {
+            try
+            {
+                if (message == null)
+                {
+                    throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NULL, "Mood should not be NULL");
+                }
 
+                MoodAnalyzer obj = new MoodAnalyzer();
 
+                Type type = Type.GetType("MoodAnalyzerProblem.MoodAnalyzer");
+
+                FieldInfo field = type.GetField(fieldName);
+
+                field.SetValue(obj, message);
+
+                return obj.message;
+            }
+            catch (NullReferenceException)
+            {
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NO_SUCH_FIELD, "No Such Field");
+            }
+
+        }
     }
 }
+
+    
